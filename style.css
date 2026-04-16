@@ -398,7 +398,21 @@ dialog::backdrop {
 @media (max-width: 768px) {
   .pictures_style {
     width: 100%;
+}
+
+ .btn_left:hover,
+  .btn_right:hover {
+    transform: translateY(-50%);
+    box-shadow: none;
+    background-color: var(--color-background);
+    color: limegreen;
+    width: auto;
+    height: auto;
   }
+
+  
+
+
 
   .btn_close {
     right: 50px;

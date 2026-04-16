@@ -33,8 +33,6 @@ const YEAR_PREFIX = "© Developer Akademie ";
 let currentIndex = 0;
 let dialogRef = null;
 
-
-
 document.addEventListener("DOMContentLoaded", initApp);
 
 
