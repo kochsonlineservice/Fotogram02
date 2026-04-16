@@ -106,19 +106,8 @@ header img {
   gap: 20px;
 }
 
-/* Startzustand */
-.dialog_picture {
-  opacity: 0;
-  transform: translate(-150%, -50%);
-  transition: all 2s ease;
-}
 
-/* Endzustand (wenn geöffnet) */
-.dialog_picture.opened {
-  opacity: 1;
-  transform: translate(-50%, -50%);
 
-}
 
 .pictures_style {
   display: flex;
@@ -151,7 +140,7 @@ header img {
 
 .pictures_style img:hover {
   transform: scale(1.1);
-  transition: all 0.3s ease-in-out;
+  transition: all 0.1s ease-in-out;
   cursor: pointer;
 }
 
@@ -175,7 +164,11 @@ dialog::backdrop {
   position: fixed;
   top: 80%;
   left: 50%;
-  transform: translate(-50%, -50%);
+
+  opacity: 0;
+  transform: translate(-150%, -50%);
+  transition: all 0.5s ease;
+ 
 
   padding: 0;
   border: none;
@@ -184,7 +177,19 @@ dialog::backdrop {
 
   background: transparent;
   overflow: hidden;
+
+   
 }
+
+/* Endzustand (wenn geöffnet) */
+.dialog_picture.opened {
+  opacity: 1;
+  transform: translate(-50%, -50%);
+
+}
+
+
+
 
 
 
@@ -410,10 +415,6 @@ dialog::backdrop {
     height: auto;
   }
 
-  
-
-
-
   .btn_close {
     right: 50px;
   }
@@ -450,18 +451,5 @@ dialog::backdrop {
     height: 40px;
   }
 
-  .btn_left:hover,
-  .btn_right:hover {
-    transform: translateY(-50%) scale(1.05);
-
-    background-color: var(--color-surface);
-    color: #00ff88;
-
-    box-shadow:
-      0 0 5px #00ff88,
-      0 0 10px #00ff88;
-
-    width: 20px;
-    height: 20px;
-  }
+  
 }
