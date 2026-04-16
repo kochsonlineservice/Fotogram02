@@ -35,8 +35,6 @@ let dialogRef = null;
 
 document.addEventListener("DOMContentLoaded", initApp);
 
-
-
 /**
  * Initializes the application.
  */
@@ -47,8 +45,6 @@ function initApp() {
   initKeyboardControls();
 }
 
-
-
 /**
  * Sets the current year in the footer.
  */
@@ -57,8 +53,6 @@ function setFooterYear() {
   document.getElementById("year").textContent = YEAR_PREFIX + year;
 }
 
-
-
 /**
  * Renders the complete image gallery.
  */
@@ -66,8 +60,6 @@ function renderGallery() {
   const contentRef = document.getElementById("content");
   contentRef.innerHTML = buildGalleryHtml();
 }
-
-
 
 /**
  * Builds the HTML for the gallery.
@@ -82,8 +74,6 @@ function buildGalleryHtml() {
 
   return html;
 }
-
-
 
 /**
  * Creates a single gallery item.
@@ -109,8 +99,6 @@ function createGalleryItem(index) {
   `;
 }
 
-
-
 /**
  * Initializes the dialog behavior.
  */
@@ -118,8 +106,6 @@ function initDialog() {
   dialogRef = document.getElementById("bildDialog");
   dialogRef.addEventListener("click", handleDialogClick);
 }
-
-
 
 /**
  * Handles clicks on the dialog (close on outside click).
@@ -130,8 +116,6 @@ function handleDialogClick(event) {
     closeDialog();
   }
 }
-
-
 
 /**
  * Opens the dialog with the selected image.
@@ -144,7 +128,6 @@ function openDialog(index) {
   dialogRef.classList.add("opened");
 }
 
-
 /**
  * Closes the dialog with animation.
  */
@@ -155,8 +138,6 @@ function closeDialog() {
     dialogRef.close();
   }, 400); // muss zur CSS duration passen!
 }
-
-
 
 /**
  * Updates image and text inside the dialog.
@@ -170,8 +151,6 @@ function updateDialogContent() {
   textRef.innerText = DESCRIPTIONS[currentIndex];
 }
 
-
-
 /**
  * Shows the next image.
  */
@@ -179,8 +158,6 @@ function nextImage() {
   currentIndex = getNextIndex();
   updateDialogContent();
 }
-
-
 
 /**
  * Shows the previous image.
@@ -190,8 +167,6 @@ function prevImage() {
   updateDialogContent();
 }
 
-
-
 /**
  * Calculates the next index.
  * @returns {number} Next index
@@ -199,8 +174,6 @@ function prevImage() {
 function getNextIndex() {
   return (currentIndex + 1) % PICTURES.length;
 }
-
-
 
 /**
  * Calculates the previous index.
@@ -210,16 +183,12 @@ function getPrevIndex() {
   return (currentIndex - 1 + PICTURES.length) % PICTURES.length;
 }
 
-
-
 /**
  * Initializes keyboard controls.
  */
 function initKeyboardControls() {
   document.addEventListener("keydown", handleKeyInput);
 }
-
-
 
 /**
  * Handles keyboard input for navigation.
