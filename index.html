@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fotogram – Mein persönliches Fotoalbum</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/svg+xml" href="./img/Fotogram_Logo.svg" />
+  </head>
+
+  <body>
+    <header aria-label="Header mit Logo">
+      <img src="./img/Fotogram_Logo.svg" alt="Logo Fotogram" />
+    </header>
+
+    <div class="container">
+      <main>
+        <h1 class="h1_headline">Mein persönliches Fotoalbum</h1>
+
+        <section aria-label="Fotoalbum Galerie">
+          <h2 class="visually-hidden">Galerie</h2>
+
+
+          <div id="content" class="content"></div>
+        </section>
+        <dialog
+          id="bildDialog"
+          class="dialog_picture"
+          aria-labelledby="dialogTitel"
+          aria-modal="true"
+        >
+          <article>
+            <h2 id="dialogTitel" class="visually-hidden">Bildansicht</h2>
+            <div class="dialog-content" onclick="stopClose(event)">
+              <button
+                class="btn_left"
+                onclick="prevImage()"
+                aria-label="Vorheriges Bild"
+              >
+                <svg viewBox="0 0 24 24" width="30" height="30">
+                  <path
+                    d="M15 6 L9 12 L15 18"
+                    stroke="currentColor"
+                    stroke-width="3"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
+              <figure class="img-wrapper">
+                <img
+                  id="grossesBild"
+                  class="large-img"
+                  alt="Vergrößertes Bild"
+                />
+                <button
+                  class="btn_close"
+                  onclick="closeDialog()"
+                  aria-label="Dialog schließen"
+                >
+                  ✕
+                </button>
+                <figcaption>
+                  <p class="bildText" id="bildText"></p>
+                </figcaption>
+              </figure>
+              <button
+                class="btn_right"
+                onclick="nextImage()"
+                aria-label="Nächstes Bild"
+              >
+                <svg viewBox="0 0 24 24" width="30" height="30">
+                  <path
+                    d="M9 6 L15 12 L9 18"
+                    stroke="currentColor"
+                    stroke-width="3"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
+            </div>
+          </article>
+        </dialog>
+      </main>
+    </div>
+
+    
+    <footer class="footer">
+      <div class="footer-logo">
+        <img src="./img/da_logo_white.svg" alt="Developer Akademie Logo" />
+        <span id="year" class="footer-span">@ Developer Akademie 2026</span>
+      </div>
+
+       
+    </footer>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
